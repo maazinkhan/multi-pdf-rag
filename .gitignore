@@ -1,0 +1,20 @@
+# Virtual environment
+.venv/
+
+# Secrets
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# User documents
+data/docs/*
+!data/docs/.gitkeep
+
+# Future embedding cache
+cache/
+
+# IDE
+.idea/
+.vscode/
