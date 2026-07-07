@@ -9,9 +9,14 @@ def load_documents():
     all_documents = []
 
     for pdf in docs_dir.glob("*.pdf"):
+        # Create a loader object for the current PDF.
         loader = PyPDFLoader(pdf)
+
+        # Read the PDF and return a list of Document objects
+        # (one Document per page).
         documents = loader.load()
 
+        # Combine pages from all PDFs into a single list.
         all_documents.extend(documents)
 
     return all_documents
