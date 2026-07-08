@@ -16,3 +16,15 @@ def split_documents(documents):
     chunks = text_splitter.split_documents(documents)
 
     return chunks
+
+# Input:
+# list[Document]
+#
+# Output:
+# list[Document] (smaller chunks)
+#
+# Uses:
+# RecursiveCharacterTextSplitter
+#
+# Metadata:
+# Preserved automatically

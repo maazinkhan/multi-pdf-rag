@@ -3,6 +3,8 @@ from langchain_community.document_loaders import PyPDFLoader
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+
 def load_documents():
     docs_dir = BASE_DIR / "data" / "docs"
 
@@ -22,3 +24,12 @@ def load_documents():
     return all_documents
 
 
+
+# Input:
+# PDF files
+#
+# Output:
+# list[Document]
+#
+# Uses:
+# PyPDFLoader
