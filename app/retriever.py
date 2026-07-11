@@ -1,6 +1,4 @@
-from langchain_google_genai.embeddings import GoogleGenerativeAIEmbeddings
 from pathlib import Path
-from langchain_chroma import Chroma
 from dotenv import load_dotenv
 import os
 
