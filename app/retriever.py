@@ -15,18 +15,3 @@ def create_retriever(vector_store):
     )
 
     return retriever
-
-
-def load_vectorstore():
-    embeddings = GoogleGenerativeAIEmbeddings(
-        model="gemini-embedding-2-preview"
-    )
-
-    persist_directory = str(BASE_DIR / "data" / "chroma")
-
-    vector_store = Chroma(
-        persist_directory=persist_directory,
-        embedding_function=embeddings
-    )
-
-    return vector_store
