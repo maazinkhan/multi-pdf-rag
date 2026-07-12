@@ -17,4 +17,6 @@ def root():
 @app.post("/chat")
 def chat(request: ChatRequest):
     answer = ask(question=request.question)
-    return answer
+    return {
+        "answer": answer
+    }
