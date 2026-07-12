@@ -7,6 +7,10 @@ vector_store = load_vectorstore()
 
 retriever = create_retriever(vector_store)
 
+llm = ChatGoogleGenerativeAI(
+        model="gemini-2.5-flash"
+    )
+
 def ask(question):
     docs = retriever.invoke(question)
 
@@ -16,7 +20,12 @@ def ask(question):
 
     prompt = ChatPromptTemplate.from_template(
         """
-    Answer the question using only the context below.
+    You are a helpful AI assistant.
+
+    Answer ONLY using the provided context.
+    
+    If the answer cannot be found in the context,
+    say you don't know.
 
     Context:
     {context}
@@ -26,10 +35,6 @@ def ask(question):
     """
     )
 
-
-    llm = ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash"
-    )
 
     messages = prompt.invoke(
          {
